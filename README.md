@@ -1,19 +1,42 @@
-# 🎈 Blank app template
+# Data Quality Check Tool
 
-A simple Streamlit app template for you to modify!
+## Overview
+This Streamlit-based application allows users to upload a CSV file and perform various data quality checks, including:
+- Checking for null values
+- Validating date formats
+- Detecting primary key duplicate values
+- Identifying non-numerical values in numerical columns
+- Finding negative numbers in numerical columns
 
-[![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://blank-app-template.streamlit.app/)
+## Installation
+To set up the application, install the required dependencies:
+```sh
+pip install -r requirements.txt
+```
 
-### How to run it on your own machine
+## Usage
+1. Run the application using the following command:
+```sh
+streamlit run app.py
+```
+2. Upload a CSV file through the web interface.
+3. Select the relevant columns for validation (date, primary key, numerical columns).
+4. Click the "Run Data Quality Checks" button to generate a report.
 
-1. Install the requirements
+## Requirements
+- Python 3.x
+- Streamlit
+- Pandas
+- NumPy
 
-   ```
-   $ pip install -r requirements.txt
-   ```
+## Features
+- Interactive file upload
+- Customizable column selection
+- Detailed data quality report
+- Easy-to-use UI built with Streamlit
 
-2. Run the app
+## License
+This project is open-source and available under the MIT License.
 
-   ```
-   $ streamlit run streamlit_app.py
-   ```
+## Author
+[NG]
