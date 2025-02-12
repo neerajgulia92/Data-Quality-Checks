@@ -1,3 +1,7 @@
 streamlit
 pandas
 numpy
+langgraph
+langchain_aws
+langchain_core
+typing_extensions
