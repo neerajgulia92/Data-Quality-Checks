@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from data_quality_agents import data_quality_graph
+from agents.data_quality_agents import data_quality_graph
 
 # Streamlit App
 st.title("Data Quality Check Tool")
