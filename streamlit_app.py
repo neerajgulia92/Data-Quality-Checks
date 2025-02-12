@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-from agents.data_quality_agents import data_quality_graph
+from agents.data_quality_agents import check_null_values, check_date_format, check_primary_key_duplicates, check_non_numerical_values, check_negative_numbers
 
 # Streamlit App
 st.title("Data Quality Check Tool")
@@ -12,10 +12,23 @@ if uploaded_file is not None:
     st.write("### Uploaded Data Preview")
     st.dataframe(df.head())
     
-    # Run Data Quality Checks
-    result = data_quality_graph.invoke({"user_input": df})
+    # Buttons for individual checks
+    if st.button("Check Null Values"):
+        result = check_null_values(df)
+        st.write("**Null Values:**", result)
     
-    # Display Results
-    st.write("### Data Quality Report")
-    for check, outcome in result["response"].items():
-        st.write(f"**{check}:**", outcome)
+    if st.button("Check Date Format"):
+        result = check_date_format(df)
+        st.write("**Date Format Issues:**", result)
+    
+    if st.button("Check Primary Key Duplicates"):
+        result = check_primary_key_duplicates(df)
+        st.write("**Primary Key Duplicates:**", result)
+    
+    if st.button("Check Non-Numerical Values"):
+        result = check_non_numerical_values(df)
+        st.write("**Non-Numerical Values:**", result)
+    
+    if st.button("Check Negative Numbers"):
+        result = check_negative_numbers(df)
+        st.write("**Negative Numbers:**", result)
